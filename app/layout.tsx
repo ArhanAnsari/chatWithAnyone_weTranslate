@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 
 
 export const metadata: Metadata = {
-  title: 'SASS Clone',
+  title: 'Chat with Anyone, Anywhere - We translate for you!',
   description: 'For educational and portfolio purposes only.',
 }
 
@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           attribute="class"
           disableTransitionOnChange
