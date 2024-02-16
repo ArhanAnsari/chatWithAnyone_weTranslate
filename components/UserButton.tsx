@@ -7,14 +7,15 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu";
-import UserAvatar from "./UserAvatar";
 import { Session } from "next-auth";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 import { signIn, signOut } from "next-auth/react";
+import UserAvatar from "./UserAvatar";
   
 
 function UserButton({ session }: { session: Session | null}) {
-    // If there is no session ... don't show drop down but sign-in buttton
+    // Subscription listener...
+
     if(!session){
       return (
         <Button variant={"outline"} onClick={() => signIn()}>

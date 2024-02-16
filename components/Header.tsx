@@ -1,11 +1,12 @@
 
 import { getServerSession } from "next-auth";
-import { DarkModeToggle } from "./DarkModeToggle";
 import Logo from "./Logo";
-import UserButton from "./ui/UserButton";
 import { authOptions } from "@/auth";
 import Link from "next/link";
 import { MessageSquareIcon } from "lucide-react";
+import CreateChatButton from "./CreateChatButton";
+import { DarkModeToggle } from "./DarkModeToggle";
+import UserButton from "./UserButton";
 
 
 async function Header() {
@@ -27,6 +28,7 @@ async function Header() {
                   >
                     <MessageSquareIcon className="text-black dark:text-white"/>
                   </Link>
+                  <CreateChatButton />
                 </>
               ) : (
                 <Link href='/pricing'>Pricing</Link>
