@@ -1,3 +1,4 @@
+"use client"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -7,22 +8,32 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu";
 import UserAvatar from "./UserAvatar";
+import { Session } from "next-auth";
+import { Button } from "./button";
+import { signIn, signOut } from "next-auth/react";
   
 
-function UserButton() {
-    // Session data would go here
-  return (
+function UserButton({ session }: { session: Session | null}) {
+    // If there is no session ... don't show drop down but sign-in buttton
+    if(!session){
+      return (
+        <Button variant={"outline"} onClick={() => signIn()}>
+          Sign In
+        </Button>
+      )
+    }
+  return session && (
     <DropdownMenu>
         <DropdownMenuTrigger>
-            <UserAvatar name="Sophia Castillo" image="https://github.com/shadcn.png" />
+            <UserAvatar 
+              name={session.user?.name}
+              image={session.user?.image}
+            />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuLabel>{session.user?.name}</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => signOut()}>Sign Out</DropdownMenuItem>
         </DropdownMenuContent>
     </DropdownMenu>
   )

@@ -20,17 +20,19 @@ async function Header() {
             <div className='flex-1 flex items-center justify-end space-x-4'>
               {/* LanguageSelect */}
 
-              {session && (
+              {session ? (
                 <>
                   <Link 
                     href={'/chat'} prefetch={false}
                   >
-                    <MessageSquareIcon />
+                    <MessageSquareIcon className="text-black dark:text-white"/>
                   </Link>
                 </>
+              ) : (
+                <Link href='/pricing'>Pricing</Link>
               )}
               <DarkModeToggle />
-              <UserButton />
+              <UserButton session={session}/>
             </div>
 
         </nav>
