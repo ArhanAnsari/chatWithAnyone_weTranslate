@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <ClientProviders>
       <html lang="en">
-        <body>
+        <body className='flex flex-col min-h-screen'>
           <ThemeProvider
             defaultTheme="dark"
             enableSystem
