@@ -21,6 +21,7 @@ function UserAvatar({
                 className="rounded-full"
                 width={40}
                 height={40}
+                referrerPolicy="no-referrer"
             />
         )}
         <AvatarFallback 

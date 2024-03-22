@@ -1,5 +1,4 @@
 "use client"
-import { Button } from './ui/button';
 import { MessageSquarePlusIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -12,9 +11,10 @@ function CreateChatButton() {
         router.push('/chat/new');
     }
     return (
-        <Button onClick={createNewChat} variant={'ghost'}>
-            <MessageSquarePlusIcon />
-        </Button>
+        <button onClick={createNewChat} className='flex items-center justify-center space-x-1'>
+            <MessageSquarePlusIcon className="text-black dark:text-white"/>
+            <span className="text-black dark:text-white">Invite</span>
+        </button>
     )
 }
 

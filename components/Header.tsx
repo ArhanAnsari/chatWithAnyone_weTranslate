@@ -24,14 +24,17 @@ async function Header() {
               {session ? (
                 <>
                   <Link 
-                    href={'/chat'} prefetch={false}
+                    href={'/chat'} 
+                    className="flex justify-center items-center space-x-1"
+                    prefetch={false}
                   >
                     <MessageSquareIcon className="text-black dark:text-white"/>
+                    <span className="text-black dark:text-white">Chat</span>
                   </Link>
                   <CreateChatButton />
                 </>
               ) : (
-                <Link href='/pricing'>Pricing</Link>
+                <Link href='/pricing'>Upgrade Here</Link>
               )}
               <DarkModeToggle />
               <UserButton session={session}/>

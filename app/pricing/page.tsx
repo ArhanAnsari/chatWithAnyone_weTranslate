@@ -19,8 +19,17 @@ function PricingPage() {
                 <p className="mx-auto max-w-2xl text-lg leading-8 text-white/60">
                 Were 99% sure we have a plan to match 100% of your needs
                 </p>
-                <svg viewBox="0 0 1208 1024" className="absolute -top-10 left-1/2 -z-10 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0">
-                    <ellipse cx={604} cy={512} fill="url(#radial-gradient-price)" rx={604} ry={512}/>
+                <svg 
+                    viewBox="0 0 1208 1024" 
+                    className="absolute -top-10 left-1/2 -z-10 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0"
+                >
+                    <ellipse 
+                        cx={604} 
+                        cy={512} 
+                        fill="url(#radial-gradient-price)" 
+                        rx={604}        
+                        ry={512}
+                    />
                     <defs>
                         <radialGradient id="radial-gradient-price">
                             <stop stopColor="#7775D6"/>

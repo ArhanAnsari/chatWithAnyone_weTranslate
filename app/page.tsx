@@ -21,7 +21,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Chat with Anyone, anywhere!</h1>
-            <p>You speak your language, they speak their language.{" "}
+            <p className="pt-6">You speak your language, they speak their language.{" "}
               <span className="text-indigo-600 dark:text-indigo-500">
               Let AI handle the translation.
               </span>
