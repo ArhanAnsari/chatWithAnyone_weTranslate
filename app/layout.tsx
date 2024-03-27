@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ClientProviders from '@/components/ClientProviders';
+import FirebaseAuthProvider from '@/components/FirebaseAuthProvider';
 
 
 export const metadata: Metadata = {
@@ -18,17 +19,18 @@ export default function RootLayout({
   return (
     <ClientProviders>
       <html lang="en">
-        <body className='flex flex-col'>
-          <ThemeProvider
-            defaultTheme="dark"
-            enableSystem
-            attribute="class"
-            disableTransitionOnChange
-          >
-            <Header/>
-            {children}
-          </ThemeProvider>
-
+        <body className='flex flex-col min-h-screen'>
+          <FirebaseAuthProvider>
+            <ThemeProvider
+              defaultTheme="dark"
+              enableSystem
+              attribute="class"
+              disableTransitionOnChange
+            >
+              <Header/>
+              {children}
+            </ThemeProvider>
+          </FirebaseAuthProvider>
           </body>
       </html>
     </ClientProviders>

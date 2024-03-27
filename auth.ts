@@ -1,7 +1,8 @@
-import { FirestoreAdapter } from '@auth/firebase-adapter';
-import { NextAuthOptions, getServerSession } from 'next-auth';
+
+import type { NextAuthOptions } from 'next-auth';
 import GoogleProvider from "next-auth/providers/google";
-import { adminDb } from './firebase-admin';
+import { FirestoreAdapter } from "@auth/firebase-adapter"
+import { adminAuth, adminDb } from './firebase-admin';
 
 
 export const authOptions: NextAuthOptions = {
@@ -11,18 +12,34 @@ export const authOptions: NextAuthOptions = {
             clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
         }),
     ],
-    // callbacks: {
-    //     // appending user id to the user
-    //     jwt: async({ user, token }) => {
-    //         if (user) {
-    //             token.sub = user.id;
-    //         }
-    //         return token;
-    //     }
-    // },
+    callbacks: {
+        // access to session on client  side
+        session: async({ session, token }) => {
+            if(session?.user){
+                if(token.sub){
+                    session.user.id = token.sub;
+
+                    const firebaseToken = await adminAuth.createCustomToken(token.sub);
+                    session.firebaseToken = firebaseToken;
+                }
+            }
+            return session;
+        },  
+        // appending user id to the user
+        jwt: async({ user, token }) => {
+            if (user) {
+                token.sub = user.id;
+            }
+            return token;
+        }
+    },
     session: {
         strategy: 'jwt',
     },
-    adapter: FirestoreAdapter(adminDb)
+    adapter: FirestoreAdapter(adminDb),
+
 } satisfies NextAuthOptions;
+
+
+
 
