@@ -81,7 +81,7 @@ function PricingCards({ redirect } : { redirect: boolean }) {
                       Get started today
                   </Link>
                 )  : (
-                  tier.id && <CheckoutButton  />
+                  tier.id && <CheckoutButton />
                 )}
             </div>
         ))}

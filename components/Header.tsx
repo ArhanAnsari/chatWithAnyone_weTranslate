@@ -7,6 +7,7 @@ import { MessageSquareIcon } from "lucide-react";
 import CreateChatButton from "./CreateChatButton";
 import { DarkModeToggle } from "./DarkModeToggle";
 import UserButton from "./UserButton";
+import UpgradeBanner from "./UpgradeBanner";
 
 
 async function Header() {
@@ -42,7 +43,7 @@ async function Header() {
             </div>
 
         </nav>
-        {/* Upgrade Banner */}
+        <UpgradeBanner />
     </header>
   )
 }
