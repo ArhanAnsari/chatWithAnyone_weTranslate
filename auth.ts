@@ -38,7 +38,7 @@ export const authOptions: NextAuthOptions = {
     },
     adapter: FirestoreAdapter(adminDb),
 
-} satisfies NextAuthOptions;
+};
 
 
 

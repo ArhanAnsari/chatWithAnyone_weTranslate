@@ -1,5 +1,4 @@
 import PricingCards from '@/components/PricingCards';
-import React from 'react'
 
 function PricingPage() {
   return (
