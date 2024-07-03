@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat Translator
 
-## Getting Started
+## Description
+I have developed a sophisticated SaaS web application utilizing Next.js, TailwindCSS, and TypeScript. This innovative chat translator enables users to communicate seamlessly across language barriers. The application allows for real-time messaging with translation capabilities, ensuring that language differences do not hinder effective communication. By subscribing, users gain access to additional premium features that enhance their messaging experience. The platform is integrated with Stripe for secure payment processing and Firestore for robust data storage and management, ensuring reliability and scalability.
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Firebase account / Stripe Account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies & Methods Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+NextJS, TailwindCSS, TypeScript, ShadCN, Next Auth, zod, Firestore, Firebase rules, server components, custom hooks, server actions, protected routes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Github Repository
 
-## Learn More
+https://github.com/sphcastillo/chatWithAnyone_weTranslate
 
-To learn more about Next.js, take a look at the following resources:
+## Deployed Site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## More info
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Author: Sophia Castillo,
+Email: sophia@builtbysophia.com,
 
-## Deploy on Vercel
+Professional website: https://www.builtbysophia.com,
+GitHub: https://github.com/sphcastillo,
+LinkedIn: https://www.linkedin.com/in/sophiacastillo-ca/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+

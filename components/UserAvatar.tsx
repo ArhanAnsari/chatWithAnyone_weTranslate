@@ -3,6 +3,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 
+// customizable className prop
+// cn ~ combine some TailwindCSS
+// delayMs ~ delay time for AvatarFallback
 function UserAvatar({
     name, 
     image,
