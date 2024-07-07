@@ -1,9 +1,9 @@
-
 import type { NextAuthOptions } from 'next-auth';
 import GoogleProvider from "next-auth/providers/google";
 import { FirestoreAdapter } from "@auth/firebase-adapter"
 import { adminAuth, adminDb } from './firebase-admin';
 
+// 'select_account' ~ force user to select account
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -18,10 +18,10 @@ export const authOptions: NextAuthOptions = {
         }),
     ],
     callbacks: {
-        // access to session on client  side
+        // access to session on client side
         session: async({ session, token }) => {
             if(session?.user){
-                if(token.sub){
+                if(token?.sub){
                     session.user.id = token.sub;
 
                     const firebaseToken = await adminAuth.createCustomToken(token.sub);
@@ -41,9 +41,9 @@ export const authOptions: NextAuthOptions = {
     session: {
         strategy: 'jwt',
     },
-    adapter: FirestoreAdapter(adminDb),
+    adapter: FirestoreAdapter(adminDb) as any,
 
-};
+} satisfies NextAuthOptions;
 
 
 
