@@ -15,7 +15,8 @@ import { useSubscriptionStore } from "@/store/store";
 import LoadingSpinner from "./loadingSpinner";
 import { StarIcon } from "@radix-ui/react-icons";
   
-
+// Need session ~ accept session as a prop
+// Accept as null in case session is not availableå
 function UserButton({ session }: { session: Session | null}) {
     const subscription = useSubscriptionStore((state) => state.subscription)
 
@@ -56,7 +57,12 @@ function UserButton({ session }: { session: Session | null}) {
                   <DropdownMenuItem>Manage</DropdownMenuItem>
                 </>
               )}
-              <DropdownMenuItem className="cursor-pointer" onClick={() => signOut()}>Sign Out</DropdownMenuItem>
+              <DropdownMenuItem 
+                className="cursor-pointer" 
+                onClick={() => signOut()}
+              >
+                Sign Out
+              </DropdownMenuItem>
           </DropdownMenuContent>
       </DropdownMenu>
     )

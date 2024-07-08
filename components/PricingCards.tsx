@@ -35,6 +35,8 @@ const tiers = [
     },
   ];
 
+// re-using the PricingCards component in the Register Page & Pricing Page
+// redirect is a boolean that determines if the user is redirected to the register page or not
 function PricingCards({ redirect } : { redirect: boolean }) {
   return (
     <div className="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2">
@@ -45,7 +47,9 @@ function PricingCards({ redirect } : { redirect: boolean }) {
             >
                 <div>
                     <h3 className="text-base font-semibold leading-7 text-indigo-600">{tier.name}</h3>
+
                     <div className="mt-4 flex items-baseline gap-x-2">
+
                         {tier.priceMonthly ? (
                             <>
                                 <span className="text-5xl font-bold tracking-tight text-gray-900">
@@ -56,7 +60,9 @@ function PricingCards({ redirect } : { redirect: boolean }) {
                         ) : (
                             <span className="text-5xl font-bold tracking-tight text-gray-900">Free</span>
                         )}
+
                     </div>
+
                     <p className="mt-6 text-base leading-7 text-gray-600">{tier.description}</p>
                       <ul
                           role='list'
@@ -73,6 +79,7 @@ function PricingCards({ redirect } : { redirect: boolean }) {
                           ))}
                       </ul>
                 </div>
+    {/* Towards Registration page / If tier.id ~ render a checkout button*/}
                 {redirect ? (
                   <Link 
                     href='/register'

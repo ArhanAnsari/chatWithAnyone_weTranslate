@@ -1,7 +1,5 @@
 import { authOptions } from "@/auth";
-import { adminDb } from "@/firebase-admin";
-import { FirestoreAdapter } from "@auth/firebase-adapter";
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 
 const handler = NextAuth(authOptions);
 

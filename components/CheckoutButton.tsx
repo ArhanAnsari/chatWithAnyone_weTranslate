@@ -8,7 +8,6 @@ import LoadingSpinner from "./loadingSpinner";
 import { useSubscriptionStore } from "@/store/store";
 import ManageAccountButton from "./ManageAccountButton";
 
-
 function CheckoutButton() {
     const { data: session } = useSession();
     const [loading, setLoading] = useState(false);
