@@ -10,6 +10,8 @@ function UpgradeBanner() {
     const isPro = subscription?.role === "pro";
     const router = useRouter();
 
+    console.log("subscription: ", subscription);
+
     // if user is not a pro user, show the upgrade banner
     
     if(subscription  === undefined || isPro) return null;

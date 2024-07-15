@@ -18,7 +18,7 @@ import { StarIcon } from "@radix-ui/react-icons";
 // Need session ~ accept session as a prop
 // Accept as null in case session is not availableå
 function UserButton({ session }: { session: Session | null}) {
-    const subscription = useSubscriptionStore((state) => state.subscription)
+    const subscription = useSubscriptionStore((state) => state.subscription);
 
       if(!session){
         return (
