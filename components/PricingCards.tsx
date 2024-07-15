@@ -19,7 +19,7 @@ const tiers = [
     },
     {
       name: "Pro",
-      id: "pro",
+      id: "sub_1PbouIJFZEUYtESEe8S8yfrU",
       href: "#",
       priceMonthly: "$5.99",
       description: "Unlock the Full Potential with Pro!", 
@@ -33,7 +33,7 @@ const tiers = [
         "Early access to New Features",
       ],
     },
-  ];
+];
 
 // re-using the PricingCards component in the Register Page & Pricing Page
 // redirect is a boolean that determines if the user is redirected to the register page or not

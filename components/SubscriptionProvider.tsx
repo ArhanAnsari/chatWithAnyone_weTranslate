@@ -24,7 +24,6 @@ function SubscriptionProvider(
                 console.log("Attention: User has No Subscription!");
                 // set subscription to null after the check is made in the provider
                 setSubscription(null);
-                return;
             } else {
                 console.log("User has a Subscription!");
                 // access the data and have type safety from converter

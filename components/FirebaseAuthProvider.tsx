@@ -6,7 +6,9 @@ import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { auth } from "@/firebase";
 
+// This function is used to sync the firebase auth with the next-auth session
 async function syncFirebaseAuth(session: Session){
+    // If the session has a firebase token, sign in with it
     if(session && session.firebaseToken){
         try {
             await signInWithCustomToken(auth, session.firebaseToken);
@@ -20,6 +22,7 @@ async function syncFirebaseAuth(session: Session){
     }
 }
 
+// This component is used to sync the firebase auth with the next-auth session
 function FirebaseAuthProvider({
     children
 }: {

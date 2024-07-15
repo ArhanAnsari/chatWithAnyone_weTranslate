@@ -14,7 +14,8 @@ export const authOptions: NextAuthOptions = {
                 params: {
                     prompt: 'select_account'
                 }
-            }
+            },
+            allowDangerousEmailAccountLinking: true,
         }),
     ],
     callbacks: {

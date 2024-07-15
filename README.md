@@ -17,6 +17,8 @@ https://github.com/sphcastillo/chatWithAnyone_weTranslate
 
 ## Deployed Site
 
+https://chat-with-anyone-becuz-we-translate.vercel.app/
+
 ## More info
 
 Author: Sophia Castillo,

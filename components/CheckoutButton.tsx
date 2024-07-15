@@ -32,7 +32,7 @@ function CheckoutButton() {
         )
         // ... stripe extension on firebase will create a checkout session
         //listen to checkout session
-        return onSnapshot(docRef, snap => {
+        return onSnapshot(docRef, (snap) => {
             const data = snap.data();
             const url = data?.url;
             const error = data?.error;
