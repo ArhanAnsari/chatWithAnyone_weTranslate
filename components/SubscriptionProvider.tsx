@@ -14,20 +14,25 @@ function SubscriptionProvider(
     }
 ) {
     const { data: session } = useSession();
+    console.log("SubscriptionProvider session: ", session);
+    const setSubscription = useSubscriptionStore(
+        (state) => state.setSubscription
+    );
 
-    const setSubscription = useSubscriptionStore((state) => state.setSubscription);
     useEffect(() => {
         if(!session?.user.id) return;
 
-        return onSnapshot(subscriptionRef(session?.user.id), (snapshot) => {
+        return onSnapshot(
+            subscriptionRef(session.user.id), 
+            (snapshot) => {
             if(snapshot.empty){
                 console.log("Attention: User has No Subscription!");
                 // set subscription to null after the check is made in the provider
                 setSubscription(null);
             } else {
-                console.log("User has a Subscription!");
                 // access the data and have type safety from converter
                 setSubscription(snapshot.docs[0].data())
+                console.log("Document data: ", snapshot.docs[0].data());
             }
         }, (error) => {
             console.error("Error fetching subscription: ", error);

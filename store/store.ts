@@ -51,11 +51,17 @@ export const LanguagesSupportedMap: Record<LanguagesSupported, string> = {
 interface SubscriptionState {
     subscription: Subscription | null | undefined;
     setSubscription: (subscription: Subscription | null) => void;
+    isPro: () => boolean;
 }
 
-export const useSubscriptionStore = create<SubscriptionState>((set) => ({
+export const useSubscriptionStore = create<SubscriptionState>()((set, get) => ({
     subscription: undefined,
     // undefined is used to indicate that the subscription is still loading
     // you do not want it to be null 
     setSubscription: (subscription: Subscription | null) => set({ subscription }),
+    isPro: () => {
+        const subscription = get().subscription;
+        if(!subscription) return false;
+        return subscription.status === "active" && subscription.role === "pro";
+    }
 }))

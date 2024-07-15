@@ -1,3 +1,4 @@
+// https://github.com/invertase/stripe-firebase-extensions/blob/107031923116d776ace0d33011a28d29e48fe827/firestore-stripe-payments/functions/src/interfaces.ts
 import { DocumentData, DocumentReference, Timestamp } from 'firebase/firestore';
 import Stripe from "stripe";
 
