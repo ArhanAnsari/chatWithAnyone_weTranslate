@@ -4,12 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCqNAZyYLtdC7zUN_6cQ_fZUo9P3clniF0",
-    authDomain: "chatwithanyone-translator-app.firebaseapp.com",
-    projectId: "chatwithanyone-translator-app",
-    storageBucket: "chatwithanyone-translator-app.appspot.com",
-    messagingSenderId: "561605274666",
-    appId: "1:561605274666:web:b8b0e5dfebdba8cdee2753"
+      apiKey: "AIzaSyD4bUzzqAWDq3rZOm6Hb-JUiPCGKxoljmo",
+      authDomain: "chatwithanyone-9c3a4.firebaseapp.com",
+      projectId: "chatwithanyone-9c3a4",
+      storageBucket: "chatwithanyone-9c3a4.appspot.com",
+      messagingSenderId: "655206719484",
+      appId: "1:655206719484:web:7700f0d43f5b13ace31c79",
+      measurementId: "G-EKWB0B5YKN"
 };
 
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
